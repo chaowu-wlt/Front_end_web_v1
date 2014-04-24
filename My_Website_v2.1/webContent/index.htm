@@ -1,0 +1,1013 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<html>
+<head>
+<meta  name="Author" content="Chao Wu"/>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+	
+<title>Home</title>
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+<link rel="icon" type="image/x-icon" href="../favicon.ico" />
+<meta http-equiv="pragma" content="no-cache" />
+<meta http-equiv="cache-control" content="no-cache" />
+
+<link rel="stylesheet" type="text/css" href="../css/style.css"/>
+<script type="text/javascript" src="../js/commonControl.js"></script>
+
+<link rel="stylesheet" type="text/css" href="../jquery/css/smoothness/jquery-ui-1.8.2.custom.css"/>
+<script type="text/javascript" src="../jquery/js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="../jquery/js/jquery-ui-1.8.2.custom.min.js"></script>
+
+<style>
+		.ui-dialog-title{font-family:Arial;color:#464646;}
+		.ui-dialog{padding-top:3px; padding-bottom:20px; padding-left:3px; padding-right:3px;}
+	
+	</style>
+
+<script type="text/javascript">
+$(document).ready(function(){
+  $(" .fontColoronTable .even").mouseover(function(){
+    changeFontColor(this,'#3399CC');
+  });
+  $(" .fontColoronTable .even").click(function(){
+    changeFontColor(this,'#3399CC');
+  });
+ $(".fontColoronTable .even").mouseout(function(){
+    changeFontColor(this,'#464646');
+  });
+  
+  $(" .fontColoronTable a").mouseover(function(){
+    changeLinkFontColor(this,'#3399CC');
+  });
+ $(".fontColoronTable a").mouseout(function(){
+    changeLinkFontColor(this,'#464646');
+  });
+
+ $(".highlightTable tr").mouseover(function(){
+    highlight_row(this,'#b9ecff');
+  });
+ $(".highlightTable tr").mouseout(function(){
+    highlight_row(this);
+  });
+
+$(".expandOff").mouseover(function(){
+    changeSymbol(this,'expandOn','../images/expandOn.gif');
+  });
+ $(".expandOff").mouseout(function(){
+    changeSymbol(this,'expandOff','../images/expandOff.gif');
+  });
+  
+$( "#dialog:ui-dialog" ).dialog( "destroy" );
+$( "#img-dialog" ).dialog({
+			autoOpen: false,
+			height: 240,
+			width: 300,
+			modal: true
+});
+
+$(".dlgimg").click(function() {	
+	$("#img-dialog").dialog('open');
+	$(this).effect('bounce',300);
+});
+
+$(".expandOff").click(function() {	
+	$("#img-dialog").dialog('open');
+	 changeSymbol(this,'expandOff','../images/expandOff.gif');
+});	
+
+$( "#quiz-result" ).dialog({
+			autoOpen: false,
+			height: 350,
+			width: 500,
+			modal: true
+			 
+});
+
+$("#quiz_form").click(function() {
+ var current_property = getCurrentStyleProperty(document.getElementById('altForm'),"display");	
+	if(current_property != 'block'){
+		$("#quiz-result").dialog('open');
+	}
+});
+
+});
+
+
+</script>
+
+</head>
+
+<body onLoad="showDay();startT();searchReset();">
+<center> 
+<div class="div1" id="div1">
+<table class="header" cellspacing="0" cellpadding="5">
+<tr><td colspan="3">&nbsp;</td></tr>
+<tr valign="top" align="right">
+    	<td><span class="title">Welcome</span></td>
+    	<td><span id="showtime"></span><span id="showday"></span> </td>
+	<td colspan="4">
+	<form name="searchf" onSubmit="return search_a_query();">
+	<input name="query" type="text" value="Search for ..." onfocus="clearDefaultVal(this);" class="defaultInput"/>
+	<select name="search_engine" >
+	<option value="http://www.google.com/search?q=" selected>Google</option>
+	<option value="http://search.yahoo.com/search?p=">Yahoo!</option>
+	<option value="http://www.victoria.ac.nz/home/searchresults.aspx?cx=016339351938221485273%3Akdcexznkbg4&cof=FORID%3A11&q=">VUW</option>
+	</select>
+	<input name="submit_form" type="submit" value="search" /></form></td>
+  </tr>
+
+</table>
+
+<table cellspacing="0" cellpadding="0" class="header">
+<tr><td colspan="9">&nbsp;</td></tr>
+<tr align="center">
+<td class="extra_gap"></td>
+<td id="tab1_title"   onclick="swap_tab('content','tab1');"  class="odd tabborder" onmouseover="cColorMouseOverOutTab('tab1_title','#a0a0a0');" onmouseout="cColorMouseOverOutTab('tab1_title','#777777');">
+<span class="tab_subtitle a_colorb">Home</span> 
+</td>
+<td class="extra_gap"></td>
+<td id="tab2_title" onclick="swap_tab('content','tab2');"  class="unopentitle tabborder"  onmouseover="cColorMouseOverOutTab('tab2_title','#a0a0a0');" onmouseout="cColorMouseOverOutTab('tab2_title','#777777');">
+<span  class="tab_subtitle">Quiz</span>
+</td>
+<td class="extra_gap"></td>
+<td id="tab3_title" onclick="swap_tab('content','tab3');"  class="unopentitle tabborder"  onmouseover="cColorMouseOverOutTab('tab3_title','#a0a0a0');" onmouseout="cColorMouseOverOutTab('tab3_title','#777777');">
+<span  class="tab_subtitle">Game</span>
+</td>
+<td class="extra_gap"></td>
+<td  id="tab4_title" onclick="swap_tab('content','tab4');"  class="unopentitle  tabborder"  onmouseover="cColorMouseOverOutTab('tab4_title','#a0a0a0');" onmouseout="cColorMouseOverOutTab('tab4_title','#777777');">
+<span  class="tab_subtitle">About Me</span>
+</td>
+<td class="extra_cell"></td></tr>
+</table>
+
+<div class="content_container" id="content">
+
+<div  id="tab1">
+<div class="containerdiv">
+<table><tr valign="top">
+<td width="16%"> 
+
+<table cellspacing="0" cellpadding="5" id="planet_info_tpb" class="datatable fontColoronTable">
+<tr class="even" onClick="showHideTopic(this,'planet_info_1');" >
+<td class="colorBorderTop"><img src="../images/down_gray.gif" class="open_pic"/><span class="link_topic_title paddingLeftText">Solar System</span>
+</td></tr>
+<tr id="planet_info_1"><td class="detailMargin">
+<img src="../images/next_over_border.gif" class="next_pre_pic"/><span class="paddingLeftText">
+<a  href="http://en.wikipedia.org/wiki/Mercury_(planet)" target="_blank">Mercury</a></span><br />
+<img src="../images/next_over_border.gif" class="next_pre_pic"/><span class="paddingLeftText">
+<a  href="http://en.wikipedia.org/wiki/Venus" target="_blank">Venus</a></span><br />
+<img src="../images/next_over_border.gif" class="next_pre_pic"/><span class="paddingLeftText">
+<a  href="http://en.wikipedia.org/wiki/Earth" target="_blank">Earth</a></span><br />
+</td></tr>
+<tr class="even" onClick="showHideTopic(this,'planet_info_2');">
+<td class="colorBorderTop"><img src="../images/right_gray.gif" class="open_pic"/><span class="link_topic_title paddingLeftText">Solar</span>
+</td></tr>
+<tr class="hiddenContent" id="planet_info_2"><td class="detailMargin">
+<img src="../images/next_over_border.gif" class="next_pre_pic"/><span class="paddingLeftText">
+<a href="http://en.wikipedia.org/wiki/Solar_cycle" target="_blank">Solar Cycle</a></span><br />
+<img src="../images/next_over_border.gif" class="next_pre_pic"/><span class="paddingLeftText">
+<a href="http://en.wikipedia.org/wiki/Sunspot" target="_blank">Sunspot</a></span><br />
+<img src="../images/next_over_border.gif" class="next_pre_pic"/><span class="paddingLeftText">
+<a href="http://en.wikipedia.org/wiki/Facula" target="_blank">Facula</a></span><br />
+<img src="../images/next_over_border.gif" class="next_pre_pic"/><span class="paddingLeftText">
+<a href="http://en.wikipedia.org/wiki/Solar_flare" target="_blank">Solar Flare</a></span><br />
+</td></tr>
+
+<tr class="even" onClick="showHideTopic(this,'planet_info_3');" >
+<td class="colorBorderTop"><img src="../images/right_gray.gif" class="open_pic"/><span class="link_topic_title paddingLeftText">Other Terms</span>
+</td></tr>
+<tr class="hiddenContent" id="planet_info_3"><td class="detailMargin">
+<img src="../images/next_over_border.gif" class="next_pre_pic"/><span class="paddingLeftText">
+<a  href="http://en.wikipedia.org/wiki/Star" target="_blank">Star</a></span><br />
+<img src="../images/next_over_border.gif" class="next_pre_pic"/><span class="paddingLeftText">
+<a  href="http://en.wikipedia.org/wiki/Planet" target="_blank">Planet</a></span><br />
+<img src="../images/next_over_border.gif" class="next_pre_pic"/><span class="paddingLeftText">
+<a  href="http://en.wikipedia.org/wiki/Comet" target="_blank">Comet</a></span><br />
+</td></tr>
+</table>
+
+</td>
+
+<td class="extra_gap"></td>
+
+
+<td valign="top">
+
+<table id="star_tpb" cellspacing="0" cellpadding="0">
+<tr valign="top">
+
+<td class="paddingBottom">
+<fieldset>
+
+<div class="link_topic_title fieldsetPadding even"><a name="mars">Mars</a></div>
+<table cellpadding="5" cellspacing="0">
+<tr>
+<td>
+<div class="containerborder"><img src="../images/Sat.gif" class="dlgimg" onclick="addDlgImg('Mars','dlgImg','../images/mar_big.jpg')"/>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="../images/expandOff.gif" title="Expand" class="expandOff " onclick="addDlgImg('Mars','dlgImg','../images/mar_big.jpg')" title="Expand"/></td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<p class="detailMargin">
+The fourth planet from the sun, having a sidereal period of revolution about the sun of 687 days at a mean distance of 
+227.8 million kilometers (141.6 million miles) and a mean diameter of approximately 6,726 kilometers (4,180 miles).
+</p></td>
+</tr>
+</table>
+
+</fieldset>
+
+</td>
+</tr>
+<tr  valign="top">
+<td class="paddingBottom">
+<fieldset>
+<div class="link_topic_title fieldsetPadding even"><a name="jupiter">Jupiter</a></div>
+
+<table cellpadding="5" cellspacing="0">
+<tr>
+<td><div class="containerborder">
+<img src="../images/Jup.gif" class="dlgimg" onclick="addDlgImg('Jupiter','dlgImg','../images/jup_big.jpg')"/>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="../images/expandOff.gif" title="Expand"  class="expandOff " onclick="addDlgImg('Jupiter','dlgImg','../images/jup_big.jpg')"/></td>
+
+</tr>
+</table>
+</div></td>
+<td>
+<p class="detailMargin">
+The fifth planet from the sun, the largest and most massive in the solar system, having a sidereal period of revolution about 
+the sun of 11.86 years at a mean distance of 777 million kilometers (483 million miles).
+</p></td>
+</tr>
+</table>
+
+</fieldset>
+</td>
+</tr>
+
+<tr valign="top">
+<td class="paddingBottom">
+<fieldset>
+
+<div class="link_topic_title fieldsetPadding even"><a name="saturn">Saturn</a></div>
+<table cellpadding="5" cellspacing="0">
+<tr>
+<td><div class="containerborder">
+<img src="../images/Sat.gif" class="dlgimg" onclick="addDlgImg('Saturn','dlgImg','../images/satu_big.jpg')"/>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="../images/expandOff.gif" title="Expand"  class="expandOff " onclick="addDlgImg('Saturn','dlgImg','../images/satu_big.jpg')"/></td>
+
+</tr>
+</table>
+</div></td>
+<td>
+<p class="detailMargin">
+The sixth planet from the sun and the second largest in the solar system, having a sidereal period of revolution about 
+the sun of 29.5 years at a mean distance of about 1,425,000,000 kilometers (886,000,000 miles).
+</p></td>
+</tr>
+</table>
+
+</fieldset>
+</td>
+</tr>
+
+<tr valign="top">
+<td class="paddingBottom">
+<fieldset>
+<div class="link_topic_title fieldsetPadding even"><a name="uranus">Uranus</a></div>
+<table cellpadding="5" cellspacing="0">
+<tr>
+<td><div class="containerborder">
+<img src="../images/Ura.gif" class="dlgimg" onclick="addDlgImg('Uranus','dlgImg','../images/ura_big.jpg')"/>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="../images/expandOff.gif" title="Expand"  class="expandOff " onclick="addDlgImg('Uranus','dlgImg','../images/ura_big.jpg')"/></td>
+
+</tr>
+</table>
+</div></td>
+<td>
+<p class="detailMargin">
+The seventh planet from the sun, revolving about it every 84.07 years at a distance of approximately 2,869 million 
+kilometers (1,790 million miles), having a mean equatorial diameter of 52,290 kilometers (32,480 miles) and a mass 
+14.6 times that of Earth.
+</p></td>
+</tr>
+</table>
+
+</fieldset>
+</td>
+</tr>
+
+<tr valign="top">
+<td class="paddingBottom">
+<fieldset>
+<div class="link_topic_title fieldsetPadding even"><a name="neptune">Neptune</a></div>
+
+<table cellpadding="5" cellspacing="0">
+<tr>
+<td><div class="containerborder">
+<div><img src="../images/Nep.gif" class="dlgimg" onclick="addDlgImg('Neptune','dlgImg','../images/nep_big.jpg')"/></div>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<td><img src="../images/expandOff.gif" title="Expand"  class="expandOff " onclick="addDlgImg('Neptune','dlgImg','../images/nep_big.jpg')"/></td>
+
+</tr>
+</table>
+</div>
+</div></td>
+<td>
+<p class="detailMargin">
+The eighth planet from the sun, having a sidereal period of revolution around the sun of 164.8 years at a mean 
+distance of 4.5 billion kilometers.
+</p></td>
+</tr>
+</table>
+
+</fieldset>
+</td>
+</tr>
+
+<tr><td><div><font size="-1">
+(These paragraphs result from many references to Wikipedia.)
+</font></div></td></tr>
+</table>
+
+
+</td>
+
+
+</tr>
+</table>
+<div id="img-dialog">
+<div align="center" class="detailMargin">
+<table>
+<tr>
+<td width="100%" height="100%"><div id="dlgImg" class="containerborder" ></div></td>
+</tr>
+</table>
+</div>
+</div>
+
+</div>
+</div>
+
+
+
+<div id="tab2" class="hiddenContent">
+<div class="containerdiv">
+<table class="datatable">
+<tr valign="top">
+<td>
+<div>
+<table class="datatable">
+<tr>
+<td>
+<a name="quiz" class="subtitle">Cosmo Quiz</a>
+</td>
+</tr>
+
+<tr>
+<td>
+<hr/>
+</td>
+</tr>
+<tr>
+<td>
+<div>
+<div>Do you set up social barriers or is your life an all-access invitational?
+See where you stand with this quiz.</div>
+
+<p id="altForm" class="hiddenContent redText"><em>* please check at least one radio button!</em></p>
+
+<div class="detailMargin">
+<form name="quizForm">
+<ol>
+<li><B>You step into a lift and see a casual acquaintance. You:</B>
+    <br />
+    <input type="radio" name="weight" value="3" id="weight"> Ask what he/she has been up to
+    <br />
+    <input type="radio" name="weight" value="2" id="weight"> Smile and politely say hi
+    <br />
+    <input type="radio" name="weight" value="1" id="weight"> Stare ahead and keep mum
+</li>
+    <p></p>
+
+<li><b>While working out at the gym, other members typically:</b>
+    <br />
+    <input type="radio" name="weight4" value="1" id="weight4"> Let you sweat in peace
+    <br />
+    <input type="radio" name="weight4" value="3" id="weight4"> Bug you all the time
+    <br />
+    <input type="radio" name="weight4" value="2" id="weight4"> Occasionally ask you for the time
+</li>
+    <p></p>
+
+<li><b>How often do you wind up listening to people you don't even care about
+       tell you their love/career/health problems?</b>
+    <br />
+    <input type="radio" name="weight1" value="2" id="weight1"> Once a week
+    <br />
+    <input type="radio" name="weight1" value="1" id="weight1"> Once a year
+    <br />
+    <input type="radio" name="weight1" value="3" id="weight1"> Once a day
+</li>
+    <p></p>
+
+<li><b>When pesky telemarketers call you, you usually:</b>
+    <br />
+    <input type="radio" name="weight2" value="2" id="weight2"> Say you're in a rush and can't talk
+    <br />
+    <input type="radio" name="weight2" value="1" id="weight2"> Hang up before they start yakking
+    <br />
+    <input type="radio" name="weight2" value="3" id="weight2"> Roll your eyes and listen
+</li>
+    <p></p>
+
+<li><b>How often do people stop and ask you for directions?</b>
+    <br />
+    <input type="radio" name="weight3" value="3" id="weight3"> All the time
+    <br />
+    <input type="radio" name="weight3" value="2" id="weight3"> Occasionally, and you often help
+    <br />
+    <input type="radio" name="weight3" value="1" id="weight3"> Hardly ever
+</li>
+    <p></p>
+</ol>
+
+<div class="detailMargin">
+<input type="button" value="Get my results!" id="quiz_form" onClick="getQuizResult('Cosmo Quiz Result','quizForm','resultDesc');">
+<input type="button" value="Reset" onClick="resetForm('quizForm');">
+</div>
+</form>
+<div>
+<font size="-1">
+(based on a quiz by Cosmopolitan Magazine,
+<a href="http://www.ivillage.com/ivillage/quiz/">published online</a>)
+</font>
+</div>
+<a href="#quiz" id="scrollTop"></a>
+<div id="quiz-result">
+<div align="center" class="detailMargin">
+<div class="link_topic_title"><span>Total Score: </span><span id="total_score"></span></div>
+<table >
+<tr>
+<td width="100%" height="100%">
+<div id="resultDesc">
+
+<table cellspacing="1" cellpadding="5" class="datagridtable highlightTable">
+<tr>
+<td class="even nohighlight">Score</td>
+<td class="even nohighlight">Meaning</td>
+</tr>
+<tr class="odd">
+<td width="15%"><span id="score_range"></span></td>
+<td align="left"><p class="detailMargin" id="meaning"></p></td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+
+
+</table>
+</div>
+</div>
+
+
+
+<div id="tab3" class="hiddenContent">
+<div class="containerdiv">
+<table class="datatable">
+<tr valign="top">
+<td>
+<div>
+<table class="datatable">
+<tr>
+<td>
+<a name="quiz" class="subtitle">A MadLib Story Generator</a>
+</td>
+</tr>
+
+<tr>
+<td>
+<hr/>
+</td>
+</tr>
+<tr>
+<td>
+<div>
+<h4>"Camping Adventure"</h4>
+<div>Enter a few words as instructed below to see your customized story:<br />
+<font class="star">(Note: * fields are required.)</font></div>
+
+<div class="detailMargin">
+<table>
+<tr><td>
+<form name="madlib">
+
+<table cellpadding=5>
+<tr class="note"><td id="req_name"></td></tr>
+<tr>
+    <td id="required_field1">Your name:<font class="star">&nbsp;*</font></td>
+    <td><input type="text" name="name"></td>
+	
+</tr>
+<tr class="note"><td id="req_fname"></td></tr>
+<tr>
+    <td id="required_field2">Your best friend's name:<font class="star">&nbsp;*</font></td>
+    <td><input type="text" name="fname"></td>
+</tr>
+<tr>
+    <td>Another name:</td>
+    <td><input type="text" name="name2"></td>
+</tr>
+<tr class="note"><td id="req_animal"></td></tr>
+<tr>
+    <td id="required_field3">An animal:<font class="star">&nbsp;*</font></td>
+    <td><input type="text"  name="animal"></td>
+</tr>
+<tr class="note"><td id="req_animal2"></td></tr>
+<tr>
+    <td id="required_field4">Another animal:<font class="star">&nbsp;*</font></td>
+    <td><input type="text" name="animal2"></td>
+</tr>
+<tr>
+    <td>Another animal:</td>
+    <td><input type="text" name="animal3"></td>
+</tr>
+<tr>
+    <td>Another animal:</td>
+    <td><input type="text" name="animal4"></td>
+</tr>
+<tr>
+    <td>Food:</td>
+    <td><input type="text" name="food"></td>
+</tr>
+<tr>
+    <td>Your favourite item you own:</td>
+    <td><input type="text" name="iname"></td>
+</tr>
+<tr>
+    <td>A colour:</td>
+    <td><input type="text" name="cname"></td
+></tr>
+<tr>
+    <td>A season:</td>
+    <td><input type="text" name="season"></td
+></tr>
+<tr>
+    <td>An adjective:</td>
+    <td><input type="text" name="adj"></td>
+</tr>
+<tr class="note"><td id="invalid"></td></tr>
+<tr>
+	<td  id="invalid_email">Your email:</td>
+	<td><input type="text" name="email"></td>
+</tr>
+<tr>
+    <td colspan="2" align="right">
+    <input type="button" value="Tell Me a Story" onClick="madlib_generator();"></td>
+</tr>
+
+</table>
+
+</form>
+</td>
+<td>
+<td id="story"></td>
+</td>
+</tr>
+</table>
+
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+
+
+</table>
+</div>
+</div>
+
+
+<div id="tab4" class="hiddenContent">
+<div class="containerdiv">
+<table>
+<tr>
+<td valign="top"> 
+
+<table cellspacing="0" cellpadding="5" id="contact_info_tpb" class="fontColoronTable">
+<tr><td class="paddingBottom"><div class="containerborder"><img src="../images/100801_sc.jpg" class="photo"/></div></td></tr>
+</table>
+
+
+</td>
+
+<td  class="extra_gap"></td>
+
+
+<td width="80%" class="paddingBottom">
+<div>
+<table class="datatable">
+<tr>
+<td>
+<span class="mainTitle">Chao Wu</span>
+</td>
+</tr>
+
+<tr>
+<td>
+<hr />
+</td>
+</tr>
+
+<tr>
+<td>
+<div>I believe my greatest attribute is my ability to do a job. I will not give up any problem whatever it takes to meet a deadline.
+Working throughout my studies, and participating in activities such as voluntary work has taught me term work and patience, also giving me an appreciation of diverse styles of functioning.
+I can communicate with a wide range of people.</div>
+
+<div>
+<ul>
+<li>Keen to learn new knowledge and be a fast learner</li>
+<li>Work hard</li>
+<li>Reliable and honest</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<!-- hidden skill table -->
+<div class="paddingBottom">
+<table cellspacing="0" cellpadding="0" class="skill_table fontColoronTable">
+
+<tr class="even" onClick="showHideTopic(this,'skill_set');"><td class="link_topic_title containerborder">
+<img src="../images/right_gray.gif" class="open_pic"/><span class="paddingLeftText">My Skill List</span>
+</td></tr>
+<tr id="skill_set" class="hiddenContent"><td>
+<div class="containerborder">
+I have knowledge of:
+<ul>
+<li>Microsoft Office, Adobe suite(Dreamweaver, Firework, Flash)</li>
+<li>PHP, XQuery, XUpdate, XML DTD, XML schema</li>
+<li>SQL, Datawarehouse</li>
+<li>C/C++, Prolog and Haskell programming languages</li>
+</ul> 
+
+I have work experience in the use of:
+<ul>
+<li>Java, JSP(Struts), HTML, CSS, JavaScript(including JQuery and yahoo yui library), Template Toolkit</li>
+</ul>
+</div>
+</td></tr>
+
+</table>
+</div>
+</td>
+</tr>
+
+<tr>
+<td>
+<div>
+<table cellspacing="0" cellpadding="5" class="tableborder fontColoronTable" width="20%">
+<tr class="even">
+<td onClick="showHideTopic(this,'titles');">
+<img src="../images/down_gray.gif" class="open_pic"/><span class="link_topic_title paddingLeftText">Contents</span>
+</td>
+</tr>
+<tr>
+<td id="titles" class="detailMargin">
+<div>
+<img src="../images/next_over_border.gif" class="next_pre_pic"/><span class="paddingLeftText"><a href="#edu">Education</a></span><br />
+<img src="../images/next_over_border.gif" class="next_pre_pic"/><span class="paddingLeftText"><a href="#achieve">Achievements</a></span><br />
+<img src="../images/next_over_border.gif" class="next_pre_pic"/><span class="paddingLeftText"><a href="#expre">Work Experience</a></span><br />
+<img src="../images/next_over_border.gif" class="next_pre_pic"/><span class="paddingLeftText"><a href="#langu">Language</a></span><br />
+</div>
+</td></tr></table>
+</div>
+</td>
+</tr>
+
+<tr>
+<td>
+<p class="dblineHeight"></p>
+<a name="edu" class="subtitle">Education</a>
+</td>
+</tr>
+
+<tr>
+<td>
+<hr/>
+</td>
+</tr>
+
+<tr>
+<td>
+<div>
+<span>Tertiary:</span>
+<table cellspacing="1" cellpadding="5" class="tablebg highlightTable" id="tertiary_tpb" >
+<tr class="even">
+<td>July 2013 – October 2013</td><td><span>WelTec</span></td>
+</tr>
+<tr class="odd"><td colspan="2" rowspan="1">IT6261 - E-commerce web application development (PHP, MySQL)
+<br/>My projects were about to build an e-commerce website using wordpress, opencart, oscommerce, pure PHP and MySQL.
+</td></tr>
+<tr class="even">
+<td>July 2009 – July 2010	</td><td><span>Victoria University of Wellington</span></td>
+</tr>
+<tr class="odd"><td colspan="2" rowspan="1">To educate myself, these 3 courses I had taken gave me deep knowledge of relational databases and network concepts that will be very useful 
+in my future career.
+</td></tr>
+<tr class="even">
+<td>July 2005 – July 2008  </td><td>Victoria University of Wellington</td>
+</tr>
+<tr class="odd"><td colspan="2" rowspan="1">I have completed a Bachelor of Science degree at Victoria University in 2008. My major is Computer Science.</td>
+</table>
+</div>
+</td>
+</tr>
+
+<tr>
+<td>
+<div>
+<p></p>
+<table cellspacing="0" cellpadding="0" class="tablebg">
+<tr class="fontColoronTable">
+<td onClick="showHideTopic(this,'course_tpb');" class="containerborder even">
+<img src="../images/right_gray.gif" class="open_pic"/><span class="link_topic_title paddingLeftText">Courses: 2005 - 2010</span>
+</td>
+</tr>
+
+
+<tr>
+<td>
+<table cellspacing="1" cellpadding="5" class="datatable highlightTable hiddenContent" id="course_tpb">
+<tr class="odd"><td class="odd nohighlight">2010</td><td>SWEN432</td><td class="datatable">Advanced Database Design and Implementation</td>
+<tr class="even"><td rowspan="2" class="odd nohighlight">2009</td><td>COMP422</td><td>Data Mining, Neural Networks</td></tr>
+<tr class="odd"><td>COMP306</td><td>Computer Networks</td></tr>
+
+<tr class="even"><td rowspan="4" class="odd nohighlight">2008</td><td>COMP304</td><td>Programming Languages</td></tr>
+<tr class="odd"><td>COMP307</td><td>Introduction to Artificial Intelligence</td></tr>
+<tr class="even"><td>MATH214</td><td>Discrete Mathematics 2</td></tr>
+<tr class="odd"><td>OPRE251</td><td>Operations Research</td></tr>
+
+<tr class="even"><td rowspan="5" class="odd nohighlight">2007</td><td>COMP203</td><td>Computer Organization</td></tr>
+<tr class="odd"><td>COMP302</td><td>Database Systems</td></tr>
+<tr class="even"><td>COMP310</td><td>Concurrent Programming</td></tr>
+<tr class="odd"><td>MATH207</td><td>Linear Algebra</td></tr>
+<tr class="even"><td>MATH314</td><td>Combinatorics</td></tr>
+
+<tr class="odd"><td rowspan="7" class="odd nohighlight">2006</td><td>CHEM104</td><td>Principles of Chemistry</td></tr>
+<tr class="even"><td>COMP101</td><td>Introduction to Dynamic Web Development</td></tr>
+<tr class="odd"><td>COMP202</td><td>Formal Methods of Computer Science</td></tr>
+<tr class="even"><td>COMP206</td><td>Program and Data Structures</td></tr>
+<tr class="odd"><td>MATH114</td><td>Algebra and Discrete Mathematics</td></tr>
+<tr class="even"><td>QUAN102</td><td>Statistics for Business</td></tr>
+<tr class="odd"><td>TECH203</td><td>Computerized Data Acquisition and Analysis</td></tr>
+
+<tr class="even"><td rowspan="4" class="odd nohighlight">2005</td><td>COMP102</td><td>Introduction to Computer Program Design</td></tr>
+<tr class="odd"><td>COMP103</td><td>Introduction to Data Structures and Algorithms</td></tr>
+<tr class="even"><td>STAT131</td><td>Probability and Decision Modeling</td></tr>
+<tr class="odd"><td>TECH102</td><td>Foundations of Digital Technology</td></tr>
+
+</table>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+
+<tr>
+<td>
+<div>
+<p></p>
+<span>
+Secondary:
+</span>
+<table cellspacing="1" cellpadding="5" class="tablebg highlightTable" id="secd_tpb">
+<tr class="odd">
+<td>August 2004 – June 2005 </td><td>Taylors College of Auckland (Foundation course)</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+
+<tr>
+<td>
+<p class="dblineHeight"></p>
+<a name="achieve" class="subtitle">Achievements</a>
+</td>
+</tr>
+
+<tr>
+<td>
+<hr/>
+</td>
+</tr>
+
+<tr>
+<td>
+<div>
+<table cellspacing="1" cellpadding="5" class="tablebg highlightTable" id="achi_tpb" >
+<tr class="odd">
+<td>October 2012</td><td>ISTQB Foundation Certificate for Software Testing (you can find out my name on this page: <a href="http://anztb.org/testers_foundation.php" target="_blank">http://anztb.org/testers_foundation.php</a> )</td>
+</tr>
+<tr class="odd">
+<td>March 2008</td><td>Certificate of Appreciation from Save the Children NZ </td>
+</tr>
+<tr class="odd">
+<td>2005</td><td>Certificate of Distinction for the achievement of Chemistry in Taylors Auckland Foundation Year</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+
+<tr>
+<td>
+<p class="dblineHeight"></p>
+<a name="expre" class="subtitle">Work Experience</a>
+</td>
+</tr>
+
+<tr>
+<td>
+<hr/>
+</td>
+</tr>
+
+<tr>
+<td>
+<div>
+<p></p>
+<table cellspacing="1" cellpadding="5" class="tablebg highlightTable" id="exp1_tpb">
+<tr class="even">
+<td>Web Developer (fixed term contract)</td><td>06/2010 – 23/12/2011</td>
+</tr>
+<tr class="odd"><td colspan="2">Company: Wellington City Council</td></tr>
+<tr class="odd">
+<td colspan="2">I had worked on PowerBuilder Java Transformation Project. This project includes 4 java applications. My work involved coding on the server-side and the client-side. At the java side, I mainly implemented and changed java methods.  JSP change is related to java bean class. At the client side, I used HTML, CSS and JavaScript to implement functionalities, such as change to a new page layout; use shortcut key to insert current date and time at any text field or text area; sorting an array with specify order, etc. I used yahoo yui library to changed normal tables into yahoo yui table with dragging and resizing functionalities. I also played JQuery for a while for drag and drop purpose. I had attended regularly meetings to inform them of fixes I have done and also suggested possible improvements. The work I have done involves Java, JSP (struts), HTML, CSS and JavaScript with JQuery and yahoo library.</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+
+<tr>
+<td>
+<div>
+<p></p>
+<table cellspacing="1" cellpadding="5" class="tablebg highlightTable" id="exp1_tpb">
+<tr class="even">
+<td>Developer (fixed term job) </td><td>11/2007 – 02/2008</td>
+</tr>
+<tr class="odd"><td colspan="2">Company: Catalyst IT Ltd</td></tr>
+<tr class="odd">
+<td colspan="2">My duties were to build a website, select QA test results from SQL database, 
+and then publish QA test results on the web. Projects that I took part in are
+CatalystX-CodeQA and HotTeenVindaloos.</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+
+<tr>
+<td>
+<div>
+<p></p>
+<table cellspacing="1" cellpadding="5" class="tablebg highlightTable" id="exp2_tpb">
+<tr class="even">
+<td>Volunteer</td><td>01/2006 – 04/2009</td>
+</tr>
+<tr class="odd"><td colspan="2">Company: Save The Children New Zealand</td></tr>
+<tr class="odd">
+<td colspan="2">My work involved formatting the images of cards, and
+then upload them to the website according to my supervisor's requests.</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+
+<tr>
+<td>
+<div>
+<p></p>
+<table cellspacing="1" cellpadding="5" class="tablebg highlightTable" id="exp3_tpb">
+<tr class="even">
+<td>Student Assistant (part-time job)</td><td>02/2007 – 11/2007</td>
+</tr>
+<tr class="odd"><td colspan="2">Company: Library of Victoria University of Wellington</td></tr>
+<tr class="odd">
+<td colspan="2">Notes: My work involved lending and reader services, which are
+shelving the books, tidy up the shelves and search for the books.</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+
+<tr>
+<td>
+<p class="dblineHeight"></p>
+<a name="langu" class="subtitle">Language</a>
+</td>
+</tr>
+
+<tr>
+<td>
+<hr/>
+</td>
+</tr>
+
+<tr>
+<td>
+<span>Mandarin, Cantonese and English</span>
+</td>
+</tr>
+
+
+</table>
+
+
+</div>
+<br />
+</td>
+
+</tr>
+</table>
+
+</div>
+</div>
+
+
+</div>
+
+
+
+<div>
+<table class="footer" cellspacing="0" cellpadding="10">
+<tr>
+<td>
+<div class="detailMargin">
+<a class="subtitle" href="#div1" onClick="swap_tab('content','tab1');">Home</a>
+</div>
+<div class="detailMargin">
+<a href="#mars" onClick="swap_tab('content','tab1');">Mars</a><br />
+<a href="#jupiter" onClick="swap_tab('content','tab1');">Jupiter</a><br />
+<a href="#saturn" onClick="swap_tab('content','tab1');">Saturn</a><br />
+<a href="#uranus" onClick="swap_tab('content','tab1');">Uranus</a><br />
+<a href="#neptune" onClick="swap_tab('content','tab1');">Neptune</a><br />
+</div>
+</td>
+<td>
+<div class="detailMargin">
+<a class="subtitle" href="#div1" onClick="swap_tab('content','tab3');">About Me</a>
+</div>
+<div class="detailMargin">
+<a href="#edu" onClick="swap_tab('content','tab4');">Education</a><br />
+<a href="#achieve" onClick="swap_tab('content','tab4');">Achievements</a><br />
+<a href="#expre" onClick="swap_tab('content','tab4');">Work Experience</a><br />
+<a href="#langu" onClick="swap_tab('content','tab4');">Language</a>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan="1">
+<span class="page_ud">Contact me: </span><a href="mailto:wuchaojane@163.com">wuchaojane@163.com </a>
+</td>
+</tr>
+</table>
+
+</div>
+</center>
+</body>
+</html>
