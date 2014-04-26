@@ -67,6 +67,7 @@ function swap_tab(id,content_id){
 	var ele = document.getElementById(eid);
 	var ele_parent = ele.parentNode.childNodes;
 	
+	
 	for(var j=0; j<ele_parent.length;j++){
 		if(ele_parent[j].id != "" && typeof ele_parent[j].id != 'undefined'){ // for chrome, check undefined for space or text
 			ele_parent[j].style.backgroundColor  = "#777777";
@@ -94,7 +95,6 @@ function swap_tab(id,content_id){
 	}					
 	}
 	document.getElementById(content_id).style.display = "block";
-	
 }
 
 // IE supports currentStyle method, but others support getComputedStyle method, to avoid this conflict, handle in the below.
@@ -392,4 +392,16 @@ function madlib_generator()
 				document.getElementById("invalid_email").style.backgroundColor = "#ebf5fc";
 			}
 		}
+	}
+	
+
+function showMenu(id)
+	{
+		document.getElementById(id).style.visibility = "visible";
+		
+	}
+	
+function hideMenu(id)
+	{
+		document.getElementById(id).style.visibility = "hidden";
 	}

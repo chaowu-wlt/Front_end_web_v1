@@ -5,7 +5,7 @@ body{
 	color:#464646;
 	background-color:#eee;
 	cursor:default;
-	margin-top:0px;
+	margin-top:40px;
 	margin-bottom:0px;
 	
 	}
@@ -81,7 +81,7 @@ padding-right:5px;}
 .title{ font-size:28px;}
 .mainTitle{ font-size:26px;}
 
-a.subtitle{ font-size:20px;}			
+span.subtitle{ font-size:20px;}			
 a{ text-decoration:none;}
 a:hover{ text-decoration:underline;}
 
@@ -96,7 +96,7 @@ img.photo{  height:100px; width:175px;}
 
 hr{ border-style:dotted; color:Silver; }
 
-span.page_ud{ font-size:12px;}
+span.site_note{ font-size:12px;}
 
 
 /* border */
@@ -158,3 +158,67 @@ tr.note,font.star,.redText{
 color:red;
 }
 
+.nav-top {
+background-color:#555555; 
+position:fixed; 
+z-index:1000;
+width:100%;
+height:40px;
+top:0;
+left:0;
+right:0;
+
+}
+
+.nav-top-table span{
+color:#FFFFFF;
+}
+
+.nav-logo{
+background:url(../favicon.ico);
+width:32px;
+height:32px;
+}
+
+.nav-select-arr{
+border-color: #FFFFFF transparent transparent;
+border-style: solid dashed dashed;
+border-width: 5px 5px 0;
+font-size: 0;
+line-height: 0;
+margin-left:5px;
+}
+
+.navDropdownTitle{
+margin:10px;
+}
+
+div .nav-div{
+display:inline;
+float:left;
+padding-right:10px;
+}
+
+.nav-div span, .nav-div a {
+color:#FFFFFF;
+}
+
+.dropdownList{
+background-color:#666666;
+position:absolute;
+visibility:hidden;
+}
+
+.dropdownList ul{
+list-style-type:none;
+padding-left:10px;
+padding-right:60px;
+}
+
+.dropdownList li{
+padding-bottom:5px;
+}
+
+.footer td{
+vertical-align:top;
+}
