@@ -99,26 +99,6 @@ $("#quiz_form").click(function() {
 </head>
 
 <body onLoad="showDay();startT();searchReset();">
-
-<div class="nav-top">
-<center> 
-<div class="div1">
-<div class="nav-div"><a href="../webContent/index.htm"><div class="nav-logo"></div></a></div>
-
-<div id="app" class="nav-div" onMouseOver="showMenu('dropdownList');changeBackgroundColor('app','#666666')" onMouseOut="hideMenu('dropdownList');changeBackgroundColor('app','#555555')">
-<div class="navDropdownTitle" ><span>Applications</span><em class="nav-select-arr"></em></div>
-<div id="dropdownList" class="dropdownList">
-<ul>
-<li><a href="https://github.com/wu2c/Front_end_web_v1">Current App on Github</a></li>
-<li><a href="https://github.com/wu2c/railsApp">Simple Rails App</a></li>
-</ul>
-</div>
-</div>
-
-</div>
-</center>
-</div>
-
 <center> 
 <div class="div1" id="div1">
 <table class="header" cellspacing="0" cellpadding="5">
@@ -144,7 +124,7 @@ $("#quiz_form").click(function() {
 <tr align="center">
 <td class="extra_gap"></td>
 <td id="tab1_title"   onclick="swap_tab('content','tab1');"  class="odd tabborder" onmouseover="cColorMouseOverOutTab('tab1_title','#a0a0a0');" onmouseout="cColorMouseOverOutTab('tab1_title','#777777');">
-<span class="tab_subtitle a_colorb">Home</span>
+<span class="tab_subtitle a_colorb">Home</span> 
 </td>
 <td class="extra_gap"></td>
 <td id="tab2_title" onclick="swap_tab('content','tab2');"  class="unopentitle tabborder"  onmouseover="cColorMouseOverOutTab('tab2_title','#a0a0a0');" onmouseout="cColorMouseOverOutTab('tab2_title','#777777');">
@@ -219,7 +199,8 @@ $("#quiz_form").click(function() {
 
 <td class="paddingBottom">
 <fieldset>
-<div class="link_topic_title fieldsetPadding even"><span>Mars</span></div>
+
+<div class="link_topic_title fieldsetPadding even"><a name="mars">Mars</a></div>
 <table cellpadding="5" cellspacing="0">
 <tr>
 <td>
@@ -246,7 +227,7 @@ The fourth planet from the sun, having a sidereal period of revolution about the
 <tr  valign="top">
 <td class="paddingBottom">
 <fieldset>
-<div class="link_topic_title fieldsetPadding even"><span>Jupiter</span></div>
+<div class="link_topic_title fieldsetPadding even"><a name="jupiter">Jupiter</a></div>
 
 <table cellpadding="5" cellspacing="0">
 <tr>
@@ -274,7 +255,8 @@ the sun of 11.86 years at a mean distance of 777 million kilometers (483 million
 <tr valign="top">
 <td class="paddingBottom">
 <fieldset>
-<div class="link_topic_title fieldsetPadding even"><span>Saturn</span></div>
+
+<div class="link_topic_title fieldsetPadding even"><a name="saturn">Saturn</a></div>
 <table cellpadding="5" cellspacing="0">
 <tr>
 <td><div class="containerborder">
@@ -301,7 +283,7 @@ the sun of 29.5 years at a mean distance of about 1,425,000,000 kilometers (886,
 <tr valign="top">
 <td class="paddingBottom">
 <fieldset>
-<div class="link_topic_title fieldsetPadding even"><span>Uranus</span></div>
+<div class="link_topic_title fieldsetPadding even"><a name="uranus">Uranus</a></div>
 <table cellpadding="5" cellspacing="0">
 <tr>
 <td><div class="containerborder">
@@ -329,7 +311,7 @@ kilometers (1,790 million miles), having a mean equatorial diameter of 52,290 ki
 <tr valign="top">
 <td class="paddingBottom">
 <fieldset>
-<div class="link_topic_title fieldsetPadding even"><span>Neptune</span></div>
+<div class="link_topic_title fieldsetPadding even"><a name="neptune">Neptune</a></div>
 
 <table cellpadding="5" cellspacing="0">
 <tr>
@@ -355,9 +337,9 @@ distance of 4.5 billion kilometers.
 </td>
 </tr>
 
-<tr><td><div><span class="site_note">
-(These paragraphs result from many references to Wikipedia and electronic dictionary. These planet images are from internet source.)
-</span></div></td></tr>
+<tr><td><div><font size="-1">
+(These paragraphs result from many references to Wikipedia.)
+</font></div></td></tr>
 </table>
 
 
@@ -468,10 +450,10 @@ See where you stand with this quiz.</div>
 </div>
 </form>
 <div>
-<span class="site_note">
+<font size="-1">
 (based on a quiz by Cosmopolitan Magazine,
 <a href="http://www.ivillage.com/ivillage/quiz/">published online</a>)
-</span>
+</font>
 </div>
 <a href="#quiz" id="scrollTop"></a>
 <div id="quiz-result">
@@ -734,7 +716,7 @@ I have work experience in the use of:
 <tr>
 <td>
 <p class="dblineHeight"></p>
-<span class="subtitle">Education</span>
+<a name="edu" class="subtitle">Education</a>
 </td>
 </tr>
 
@@ -840,7 +822,7 @@ Secondary:
 <tr>
 <td>
 <p class="dblineHeight"></p>
-<span class="subtitle">Achievements</span>
+<a name="achieve" class="subtitle">Achievements</a>
 </td>
 </tr>
 
@@ -871,7 +853,7 @@ Secondary:
 <tr>
 <td>
 <p class="dblineHeight"></p>
-<span class="subtitle">Work Experience</span>
+<a name="expre" class="subtitle">Work Experience</a>
 </td>
 </tr>
 
@@ -956,7 +938,7 @@ shelving the books, tidy up the shelves and search for the books.</td>
 <tr>
 <td>
 <p class="dblineHeight"></p>
-<span class="subtitle">Language</span>
+<a name="langu" class="subtitle">Language</a>
 </td>
 </tr>
 
@@ -996,27 +978,31 @@ shelving the books, tidy up the shelves and search for the books.</td>
 <tr>
 <td>
 <div class="detailMargin">
-<span><b>Contact Me /Report bug</b></span>
+<a class="subtitle" href="#div1" onClick="swap_tab('content','tab1');">Home</a>
 </div>
 <div class="detailMargin">
-<a href="mailto:wuchaojane@163.com">wuchaojane@163.com </a>
-<br />
+<a href="#mars" onClick="swap_tab('content','tab1');">Mars</a><br />
+<a href="#jupiter" onClick="swap_tab('content','tab1');">Jupiter</a><br />
+<a href="#saturn" onClick="swap_tab('content','tab1');">Saturn</a><br />
+<a href="#uranus" onClick="swap_tab('content','tab1');">Uranus</a><br />
+<a href="#neptune" onClick="swap_tab('content','tab1');">Neptune</a><br />
 </div>
 </td>
 <td>
 <div class="detailMargin">
-<span><b>Github Repositories</b></span>
+<a class="subtitle" href="#div1" onClick="swap_tab('content','tab4');">About Me</a>
 </div>
 <div class="detailMargin">
-<a href="https://github.com/wu2c/Front_end_web_v1">Current Website</a><br />
-<a href="https://github.com/wu2c/railsApp">Simple Rails App</a><br />
-<a href="https://github.com/login?return_to=%2Fjoin">Join Me</a>
+<a href="#edu" onClick="swap_tab('content','tab4');">Education</a><br />
+<a href="#achieve" onClick="swap_tab('content','tab4');">Achievements</a><br />
+<a href="#expre" onClick="swap_tab('content','tab4');">Work Experience</a><br />
+<a href="#langu" onClick="swap_tab('content','tab4');">Language</a>
 </div>
 </td>
 </tr>
 <tr>
-<td colspan="2">
-<div><span class="site_note"><b>Please note that:</b> this web app is not for commercial use. The favicon icon and some icons are copyright reserved.</span></div>
+<td colspan="1">
+<span class="page_ud">Contact me: </span><a href="mailto:wuchaojane@163.com">wuchaojane@163.com </a>
 </td>
 </tr>
 </table>
