@@ -312,12 +312,11 @@ function madlib_generator()
 					document.getElementById(id_name2[a]).style.backgroundColor = "white";
 				}
 			}
-		}
-		
-		
-		else
-		{
+			document.getElementById("story").style.display = "none";
 			
+		}	
+		else
+		{	
 			for(j=0; j<id_name.length; j++)
 			{
 				document.getElementById(id_name[j]).style.display = "none";
@@ -377,20 +376,16 @@ function madlib_generator()
 		var atp = email.indexOf("@");
 		var dotp = email.lastIndexOf(".");
 		
-		if(email != "")
+		if(email != "" && (atp <1 || (dotp - atp) <2))
 		{
-			if(atp <1 || (dotp - atp) <2)
-			{
-				document.getElementById("invalid").style.display = "block";
-				document.getElementById("invalid").innerHTML = "This email address is invalid.";
-				document.getElementById("invalid_email").style.backgroundColor = "yellow";
-			}
-		
-			else
-			{
-				document.getElementById("invalid").style.display = "none";
-				document.getElementById("invalid_email").style.backgroundColor = "#ebf5fc";
-			}
+			document.getElementById("invalid").style.display = "block";
+			document.getElementById("invalid").innerHTML = "This email address is invalid.";
+			document.getElementById("invalid_email").style.backgroundColor = "yellow";
+		}
+		else
+		{
+			document.getElementById("invalid").style.display = "none";
+			document.getElementById("invalid_email").style.backgroundColor = "#ffffff";
 		}
 	}
 	

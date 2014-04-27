@@ -103,14 +103,14 @@ $("#quiz_form").click(function() {
 <div class="nav-top">
 <center> 
 <div class="div1">
-<div class="nav-div"><a href="../webContent/index.htm"><div class="nav-logo"></div></a></div>
+<div class="nav-div"><a href="../webContent/index.htm" target="_self"><div class="nav-logo"></div></a></div>
 
 <div id="app" class="nav-div" onMouseOver="showMenu('dropdownList');changeBackgroundColor('app','#666666')" onMouseOut="hideMenu('dropdownList');changeBackgroundColor('app','#555555')">
 <div class="navDropdownTitle" ><span>Applications</span><em class="nav-select-arr"></em></div>
 <div id="dropdownList" class="dropdownList">
 <ul>
-<li><a href="https://github.com/wu2c/Front_end_web_v1">Current App on Github</a></li>
-<li><a href="https://github.com/wu2c/railsApp">Simple Rails App</a></li>
+<li><a href="https://github.com/wu2c/Front_end_web_v1" target="_blank">Current App on Github</a></li>
+<li><a href="https://github.com/wu2c/railsApp" target="_blank">Simple Rails App</a></li>
 </ul>
 </div>
 </div>
@@ -390,7 +390,7 @@ distance of 4.5 billion kilometers.
 <table class="datatable">
 <tr>
 <td>
-<a name="quiz" class="subtitle">Cosmo Quiz</a>
+<span class="subtitle">Cosmo Quiz</span>
 </td>
 </tr>
 
@@ -523,7 +523,7 @@ See where you stand with this quiz.</div>
 <table class="datatable">
 <tr>
 <td>
-<a name="quiz" class="subtitle">A MadLib Story Generator</a>
+<span class="subtitle">A MadLib Story Generator</span>
 </td>
 </tr>
 
@@ -532,19 +532,20 @@ See where you stand with this quiz.</div>
 <hr/>
 </td>
 </tr>
+
 <tr>
-<td>
+<td valign="top">
 <div>
 <h4>"Camping Adventure"</h4>
 <div>Enter a few words as instructed below to see your customized story:<br />
 <font class="star">(Note: * fields are required.)</font></div>
 
 <div class="detailMargin">
-<table>
-<tr><td>
+<table class="datatable">
+<tr><td class="gamepanel">
 <form name="madlib">
 
-<table cellpadding=5>
+<table cellpadding=5 cellspacing="0">
 <tr class="note"><td id="req_name"></td></tr>
 <tr>
     <td id="required_field1">Your name:<font class="star">&nbsp;*</font></td>
@@ -588,12 +589,12 @@ See where you stand with this quiz.</div>
 </tr>
 <tr>
     <td>A colour:</td>
-    <td><input type="text" name="cname"></td
-></tr>
+    <td><input type="text" name="cname"></td>
+</tr>
 <tr>
     <td>A season:</td>
-    <td><input type="text" name="season"></td
-></tr>
+    <td><input type="text" name="season"></td>
+</tr>
 <tr>
     <td>An adjective:</td>
     <td><input type="text" name="adj"></td>
@@ -612,9 +613,7 @@ See where you stand with this quiz.</div>
 
 </form>
 </td>
-<td>
 <td id="story"></td>
-</td>
 </tr>
 </table>
 
@@ -765,6 +764,7 @@ in my future career.
 <td>July 2005 ¨C July 2008  </td><td>Victoria University of Wellington</td>
 </tr>
 <tr class="odd"><td colspan="2" rowspan="1">I have completed a Bachelor of Science degree at Victoria University in 2008. My major is Computer Science.</td>
+</tr>
 </table>
 </div>
 </td>
@@ -1008,9 +1008,9 @@ shelving the books, tidy up the shelves and search for the books.</td>
 <span><b>Github Repositories</b></span>
 </div>
 <div class="detailMargin">
-<a href="https://github.com/wu2c/Front_end_web_v1">Current Website</a><br />
-<a href="https://github.com/wu2c/railsApp">Simple Rails App</a><br />
-<a href="https://github.com/login?return_to=%2Fjoin">Join Me</a>
+<a href="https://github.com/wu2c/Front_end_web_v1" target="_blank">Current Website</a><br />
+<a href="https://github.com/wu2c/railsApp" target="_blank">Simple Rails App</a><br />
+<a href="https://github.com/login?return_to=%2Fjoin" target="_blank">Join Me</a>
 </div>
 </td>
 </tr>
